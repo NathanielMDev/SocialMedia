@@ -9,6 +9,7 @@ public class ApplicationDbContext : IdentityDbContext<User, IdentityRole<int>, i
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
     public DbSet<Post> Posts { get; set; } = null!;
+    public DbSet<Comment> Comments { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder builder) {
         base.OnModelCreating(builder);
