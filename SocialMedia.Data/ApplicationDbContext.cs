@@ -14,7 +14,7 @@ public class ApplicationDbContext : IdentityDbContext<User, IdentityRole<int>, i
     protected override void OnModelCreating(ModelBuilder builder) {
         base.OnModelCreating(builder);
 
-        builder.Entity<Post>().ToTable("Users");
+        builder.Entity<User>().ToTable("Users");
     }
 }
 
