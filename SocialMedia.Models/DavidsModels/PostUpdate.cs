@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SocialMedia.Services.DavidsPostServices
+namespace SocialMedia.Models
 {
-    internal interface IPostService
+    internal class PostUpdate
     {
     }
 }
