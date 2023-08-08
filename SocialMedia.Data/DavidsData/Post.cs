@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SocialMedia.Data;
 
-public class Post {
+public class Posts {
     [Key]
     public int Id { get; set; }
 
@@ -20,5 +20,8 @@ public class Post {
     public User Author { get; set; } = null!;
 
     [Required]
-    public virtual List<Comment> CommentList { get; set; } = new();
+    public virtual List<Comments> CommentList { get; set; } = new();
+
+    [Required]
+    public virtual List<Likes> LikedList { get; set; } = new();
 }
