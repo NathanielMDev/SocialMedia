@@ -1,14 +1,12 @@
 using SocialMedia.Data;
-using SocialMedia.Services;
 using SocialMedia.Models;
-namespace SocialMedia.Services.Comment;
+namespace SocialMedia.Services;
 
 internal interface ICommentService
 {
-    Task<Post?> CreateCommentAsync(CommentCreate request);
-    Task<Get> GetCommentByPostIdAsync(int PostId);
-    Task<Get> GetCommentByCommentAuthorIdAsync(int AuthorId)
-    Task<bool> UpdateCommentAsync(CommentUpdate Request);
-    Task<bool> DeleteCommentAsync(int id);
+    Task<CommentListItem?> CreateCommentAsync(CommentCreate request);
+    Task<IEnumerable<CommentListItem>> GetAllCommentsAsync();
+    Task<CommentDetail?> GetCommentByPostIdAsync(int postId);
+    Task<CommentDetail?> GetCommentByAuthorIdAsync(int authorId);
 
 }

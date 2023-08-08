@@ -1,4 +1,8 @@
-namespace SocialMedia.Models.Comments;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+
+namespace SocialMedia.Models;
 
 public class CommentCreate 
 {
