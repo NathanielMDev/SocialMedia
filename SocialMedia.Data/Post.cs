@@ -20,8 +20,8 @@ public class Posts {
     public User Author { get; set; } = null!;
 
     [Required]
-    public virtual List<Comments> CommentList { get; set; } = new();
+    public virtual List<Comment> CommentList { get; set; } = new();
 
-    [Required]
-    public virtual List<Likes> LikedList { get; set; } = new();
+//    [Required]
+//    public virtual List<Likes> LikedList { get; set; } = new();
 }
