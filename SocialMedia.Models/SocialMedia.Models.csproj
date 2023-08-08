@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="DavidsPostModels\PostUpdate.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="DavidsPostModels\PostUpdate.txt" />
+  </ItemGroup>
+
 </Project>
