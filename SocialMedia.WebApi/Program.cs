@@ -26,13 +26,13 @@ builder.Services.AddScoped<ICommentService, CommentService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<ApplicationDbContext(options => options.UseSqlServer("ConnectionStrings:DefaultConnection"));
+//builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Services.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddDefaultIdentity<UserEntity>(options =>
-{
+// builder.Services.AddDefaultIdentity<UserEntity>(options =>
+// {
 
-})
-.AddEntityFrameworkStores<AppliApplicationDbContext>();
+// })
+// .AddEntityFrameworkStores<AppliApplicationDbContext>();
 
 
 

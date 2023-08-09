@@ -30,7 +30,7 @@ public class PostService : IPostService {
         };
         _dbContext.Posts.Add(addition);
 
-        var numOfChanges = await _dbContext.Posts.CountAsync();
+        var numOfChanges = await _dbContext.SaveChangesAsync();
         if (numOfChanges != -1)
             return null;
         return new PostListItem() { 

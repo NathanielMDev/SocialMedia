@@ -6,6 +6,9 @@ namespace SocialMedia.Data;
 
 public class Comment
 {
+    [Key]
+    public int Id { get; set; }
+    
     [Required, MinLength(1), MaxLength(256)]
     public string Text { get; set; } = string.Empty;
     [Required]
@@ -15,7 +18,7 @@ public class Comment
     [Required]
     [ForeignKey(nameof(OriginalPost))]
     public int PostId { get; set; }
-    public Posts OriginalPost { get; set; } = null!;
+    public Post OriginalPost { get; set; } = null!;
 
 //    public virtual List<Replies> ReplyList { get; set; } = null!;
 

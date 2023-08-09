@@ -18,13 +18,13 @@ public class CommentService : ICommentService
             Text = request.Text
         };
 
-        _context.Comment.Add(comment);
+        _context.Comments.Add(comment);
         var numberOfChanges = await _context.SaveChangesAsync();
 
         if (numberOfChanges != 1)
             return null;
 
-        CommentListItem response new()
+        CommentListItem response = new()
         {
             Id = comment.Id,
             Text = comment.Text
@@ -35,15 +35,32 @@ public class CommentService : ICommentService
 
     public async Task<CommentDetail?> GetCommentByPostIdAsync(int postId)
     {
-        CommentService comment = await _context.Comment.FindAsync(postId);
+        Comment comment = await _context.Comments.FindAsync(postId);
         if (comment is null)
-        return null;
+            return null;
+
+        return new CommentDetail()
+        {
+            Id = comment.Id,
+            Text = comment.Text
+        };
     }
 
     public async Task<CommentDetail?> GetCommentByAuthorIdAsync(int authorId)
     {
-        CommentService comment = await _context.Comment.FindAsync(authorId);
+        Comment comment = await _context.Comments.FindAsync(authorId);
         if (comment is null)
-        return null;
+            return null;
+
+        return new CommentDetail()
+        {
+            Id = comment.Id,
+            Text = comment.Text
+        };
+    }
+
+    public async Task<IEnumerable<CommentListItem>> GetAllCommentsAsync()
+    {
+        return new List<CommentListItem>();
     }
 }

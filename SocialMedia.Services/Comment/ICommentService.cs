@@ -2,7 +2,7 @@ using SocialMedia.Data;
 using SocialMedia.Models;
 namespace SocialMedia.Services;
 
-internal interface ICommentService
+public interface ICommentService
 {
     Task<CommentListItem?> CreateCommentAsync(CommentCreate request);
     Task<IEnumerable<CommentListItem>> GetAllCommentsAsync();
