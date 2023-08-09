@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
+
 namespace SocialMedia.Models.Likes
 {
     public class LikeUpdate
@@ -8,8 +9,8 @@ namespace SocialMedia.Models.Likes
         public int Id { get; set; }
 
         [Required]
-        [ForeignKey(nameof(CurrentPost))]
+        [Key]
         public int PostId { get; set; }
-        public Post CurrentPost { get; set; } = null!;
+    
     }
 }

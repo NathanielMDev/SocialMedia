@@ -30,7 +30,6 @@ public class LikeService : ILikeService
         .Select(entity => new LikeListItem
         {
             PostId = entity.PostId,
-            CurrentPost = entity.CurrentPost,
             Id = entity.Id
         })
         .ToListAsync();
@@ -92,13 +91,12 @@ public class LikeService : ILikeService
             return false;
         
         entity.PostId = request.PostId;
-        entity.CurrentPost = request.CurrentPost;
 
         int numberOfChanges = await _dbContext.SaveChangesAsync();
 
         return numberOfChanges == 1;
     }
 
-    
+   
 }
 

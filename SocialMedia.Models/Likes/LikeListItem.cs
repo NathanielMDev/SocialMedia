@@ -6,9 +6,8 @@ namespace SocialMedia.Models.LikeListItem;
 
     public class LikeListItem
     {
-    [ForeignKey(nameof(CurrentPost))]
+    [Key]
     public int PostId { get; set; }
-    public Post CurrentPost { get; set; } = null!;
 
     [Key]
     public int OwnerId { get; set; }

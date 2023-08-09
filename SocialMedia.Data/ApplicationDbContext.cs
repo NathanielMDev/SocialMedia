@@ -10,6 +10,7 @@ public class ApplicationDbContext : IdentityDbContext<User, IdentityRole<int>, i
 
     public DbSet<Posts> Posts { get; set; } = null!;
     public DbSet<Comment> Comments { get; set; } = null!;
+    
 
     protected override void OnModelCreating(ModelBuilder builder) {
         base.OnModelCreating(builder);
@@ -18,4 +19,3 @@ public class ApplicationDbContext : IdentityDbContext<User, IdentityRole<int>, i
     }
 }
 
-*/
